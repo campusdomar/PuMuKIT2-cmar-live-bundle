@@ -1,0 +1,31 @@
+{
+    "name": "campusdomar/pmk2-cmar-live-bundle",
+    "type": "symfony-bundle",
+    "description": "CMAR LiveBundle.",
+    "keywords": [
+        "theming",
+        "symfony2",
+        "bundle",
+        "pumukit",
+        "teltek"
+    ],
+    "homepage": "https://github.com/campusdomar/PuMuKIT2-cmar-live-bundle.git",
+    "license": "Copyright",
+    "authors": [
+        {
+            "name": "Teltek Team",
+            "homepage": "http://teltek.es"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/framework-bundle": "~2.0",
+        "twig/twig": "~1.5",
+        "pumukit/pumukit2": "2.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pumukit\\Cmar\\LiveBundle\\": ""
+        }
+    }
+}
