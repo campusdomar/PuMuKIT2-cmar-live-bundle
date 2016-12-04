@@ -7,8 +7,8 @@
 
 {% block javascripts %}
   {{ parent() }}
-  <script src="{{ asset('bundles/pumukitwebtv/js/jwplayer/jwplayer.js') }}" type="text/javascript"></script>
-  {% if jwplayer_key is defined %}<script type="text/javascript">jwplayer.key="{{ jwplayer_key }}";</script>{% endif %}
+  <script src="{{ asset('bundles/pumukitcmarlive/js/jwplayer/jwplayer.js') }}" type="text/javascript"></script>
+  {% if jwplayer7_key is defined %}<script type="text/javascript">jwplayer.key="{{ jwplayer7_key }}";</script>{% endif %}
 {% endblock%}
 
 {% block title %}{{ parent() }} - {{ live.name }}{% endblock %}
@@ -19,7 +19,7 @@
   <div style="overflow:hidden;">
     {% render(controller('PumukitCmarLiveBundle:Chat:show', {'channel' : live.id})) %}
     {% set width = enable_chat ? '640' : '100%' %}
-    {% include('PumukitLiveBundle:Default:liveplayer.html.twig') with {width: width, height: '540', controlbar: 'bottom'} %}
+    {% include('PumukitCmarLiveBundle:Default:liveplayer.html.twig') with {width: width, height: '540', controlbar: 'bottom'} %}
   </div>
 </div>
 {% include('PumukitLiveBundle:Default:info.html.twig') %}
