@@ -11,6 +11,10 @@ use Pumukit\LiveBundle\Document\Live;
 
 class DefaultController extends Base
 {
+    /**
+     * @Route("/live/iframe/{id}", name="pumukit_live_iframe_id")
+     * @Template("PumukitLiveBundle:Default:iframe.html.twig")
+     */
     public function iframeAction(Live $live, Request $request, $iframe = true)
     {
         $parameters = parent::iframeAction($live, $request, $iframe);
