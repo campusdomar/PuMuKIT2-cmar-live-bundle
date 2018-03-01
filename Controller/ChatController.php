@@ -27,7 +27,7 @@ class ChatController extends Controller
         return array(
                      'enable_chat' => $this->container->getParameter('pumukit_cmar_live.chat.enable'),
                      'updateInterval' => $this->container->getParameter('pumukit_cmar_live.chat.update_interval'),
-                     'channel' => $channel
+                     'channel' => $channel,
                      );
     }
 
@@ -47,7 +47,7 @@ class ChatController extends Controller
         $message->setInsertDate(new \DateTime());
 
         try {
-            $dm = $this->get("doctrine_mongodb.odm.document_manager");
+            $dm = $this->get('doctrine_mongodb.odm.document_manager');
             $dm->persist($message);
             $dm->flush();
         } catch (\Exception $e) {
@@ -63,7 +63,7 @@ class ChatController extends Controller
      */
     public function listAction($channel)
     {
-        $dm = $this->get("doctrine_mongodb.odm.document_manager");
+        $dm = $this->get('doctrine_mongodb.odm.document_manager');
         $repo = $dm->getRepository('PumukitCmarLiveBundle:Message');
         $messages = $repo->findBy(
                                   array('channel' => $channel),

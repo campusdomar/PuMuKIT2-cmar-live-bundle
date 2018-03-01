@@ -10,14 +10,14 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 class Message
 {
     /**
-     * @var integer id
+     * @var int id
      *
      * @MongoDB\Id
      */
     private $id;
 
     /**
-     * @var string $author
+     * @var string
      *
      * @MongoDB\String
      */
@@ -38,14 +38,14 @@ class Message
     private $message;
 
     /**
-     * @var \DateTime $insertDate
+     * @var \DateTime
      *
      * @MongoDB\Date
      */
     private $insertDate;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return id
      */
@@ -67,7 +67,7 @@ class Message
      */
     public function setAuthor($author)
     {
-      $this->author = $author;
+        $this->author = $author;
     }
 
     /**
@@ -75,7 +75,7 @@ class Message
      */
     public function getAuthor()
     {
-      return $this->author;
+        return $this->author;
     }
 
     /**
@@ -83,7 +83,7 @@ class Message
      */
     public function setMessage($content)
     {
-      $this->message = $content;
+        $this->message = $content;
     }
 
     /**
@@ -91,7 +91,7 @@ class Message
      */
     public function setInsertDate($insertDate)
     {
-      $this->insertDate = $insertDate;
+        $this->insertDate = $insertDate;
     }
 
     /**
@@ -99,7 +99,7 @@ class Message
      */
     public function getInsertDate()
     {
-      return $this->insertDate;
+        return $this->insertDate;
     }
 
     /**
@@ -107,6 +107,6 @@ class Message
      */
     public function setChannel($channel)
     {
-      $this->channel = $channel;
+        $this->channel = $channel;
     }
 }
