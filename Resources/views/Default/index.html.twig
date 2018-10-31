@@ -19,7 +19,11 @@
   <div style="overflow:hidden;">
     {% render(controller('PumukitCmarLiveBundle:Chat:show', {'channel' : live.id})) %}
     {% set width = enable_chat ? '640' : '100%' %}
-    {% include('PumukitLiveBundle:Default:liveplayer.html.twig') with {width: width, height: '540', controlbar: 'bottom'} %}
+    {% if enable_chat %}
+        {% include('PumukitLiveBundle:Default:liveplayer.html.twig') with {width: width, height: '540', controlbar: 'bottom'} %}
+    {% else %}
+        {% include('PumukitLiveBundle:Default:liveplayer.html.twig') with {stretching: 'exactfit', aspectratio: '16:9'} %}
+    {% endif %}
   </div>
 </div>
 {% include('PumukitLiveBundle:Default:info.html.twig') %}
